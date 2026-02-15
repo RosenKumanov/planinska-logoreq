@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://ba8rsn6dwnpm3"]
 
-[ext_resource type="Texture2D" uid="uid://cjbre61s4qgka" path="res://textured-background-design_1100-233.jpg" id="1_uxrcv"]
+[ext_resource type="Texture2D" uid="uid://cjbre61s4qgka" path="res://Textures/textured-background-design_1100-233.jpg" id="1_uxrcv"]
 [ext_resource type="PackedScene" uid="uid://c55q8jan67bu6" path="res://Scenes/Player.tscn" id="2_rf2cd"]
 [ext_resource type="PackedScene" uid="uid://cj2e20d5c6wrj" path="res://Scenes/QuestItem.tscn" id="3_a814b"]
 [ext_resource type="PackedScene" uid="uid://bu8xha31yf7hi" path="res://Scenes/NPC.tscn" id="4_5crlr"]

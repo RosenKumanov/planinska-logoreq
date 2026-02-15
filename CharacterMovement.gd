@@ -94,3 +94,8 @@ func _input(event):
 					print("I'm talking to an NPC!")
 					# todo: set can_move to false
 					target.start_dialog()
+				elif target.is_in_group("Item"):
+					print("I'm interacting with an item.")
+					#todo check if item is needed for quest
+					#todo remove item
+					target.start_interact()

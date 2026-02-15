@@ -16,3 +16,5 @@ func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		sprite_3d.texture = item_icon
 		
+func start_interact():
+	print("I am an item!")
