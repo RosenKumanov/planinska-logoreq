@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu8xha31yf7hi"]
+[gd_scene load_steps=5 format=3 uid="uid://bu8xha31yf7hi"]
 
 [ext_resource type="Script" uid="uid://bphgdmqwlls48" path="res://Scripts/NPC.gd" id="1_tdvfm"]
+[ext_resource type="PackedScene" uid="uid://dftgtu03nhkil" path="res://Scenes/Dialog/DialogManager.tscn" id="2_fo5tq"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ue55g"]
 
@@ -19,3 +20,5 @@ mesh = SubResource("CapsuleMesh_ue55g")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74761105, 0)
 shape = SubResource("ConvexPolygonShape3D_55ck6")
+
+[node name="DialogManager" parent="." instance=ExtResource("2_fo5tq")]
