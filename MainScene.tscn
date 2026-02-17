@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba8rsn6dwnpm3"]
+[gd_scene load_steps=17 format=3 uid="uid://ba8rsn6dwnpm3"]
 
 [ext_resource type="Texture2D" uid="uid://cjbre61s4qgka" path="res://Textures/textured-background-design_1100-233.jpg" id="1_uxrcv"]
 [ext_resource type="PackedScene" uid="uid://c55q8jan67bu6" path="res://Scenes/Player.tscn" id="2_rf2cd"]
 [ext_resource type="PackedScene" uid="uid://cj2e20d5c6wrj" path="res://Scenes/QuestItem.tscn" id="3_a814b"]
 [ext_resource type="PackedScene" uid="uid://bu8xha31yf7hi" path="res://Scenes/NPC.tscn" id="4_5crlr"]
+[ext_resource type="Script" uid="uid://d08i6p2cnk2w0" path="res://Resources/Dialog/Dialog.gd" id="5_rf2cd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sk0tl"]
 sky_top_color = Color(0, 0, 0.3764706, 1)
@@ -26,18 +27,17 @@ uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 uv1_triplanar_sharpness = 0.08537738
 
-[sub_resource type="Image" id="Image_uxrcv"]
-data = {
-"data": PackedByteArray(255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255),
-"format": "RGBA8",
-"height": 4,
-"mipmaps": false,
-"width": 4
-}
+[sub_resource type="Resource" id="Resource_8xkvn"]
+script = ExtResource("5_rf2cd")
+metadata/_custom_type_script = "uid://d08i6p2cnk2w0"
+
+[sub_resource type="Resource" id="Resource_rf2cd"]
+script = ExtResource("5_rf2cd")
+metadata/_custom_type_script = "uid://d08i6p2cnk2w0"
 
 [sub_resource type="Image" id="Image_rf2cd"]
 data = {
-"data": PackedByteArray(0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255),
+"data": PackedByteArray(255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255),
 "format": "RGBA8",
 "height": 4,
 "mipmaps": false,
@@ -46,7 +46,7 @@ data = {
 
 [sub_resource type="Image" id="Image_a814b"]
 data = {
-"data": PackedByteArray(255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255),
+"data": PackedByteArray(0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255),
 "format": "RGBA8",
 "height": 4,
 "mipmaps": false,
@@ -54,6 +54,15 @@ data = {
 }
 
 [sub_resource type="Image" id="Image_5crlr"]
+data = {
+"data": PackedByteArray(255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_hbc2u"]
 data = {
 "data": PackedByteArray(0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255),
 "format": "RGBA8",
@@ -63,7 +72,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture3D" id="ImageTexture3D_hbc2u"]
-_images = Array[Image]([SubResource("Image_uxrcv"), SubResource("Image_rf2cd"), SubResource("Image_a814b"), SubResource("Image_5crlr")])
+_images = Array[Image]([SubResource("Image_rf2cd"), SubResource("Image_a814b"), SubResource("Image_5crlr"), SubResource("Image_hbc2u")])
 
 [node name="World" type="Node3D"]
 
@@ -85,10 +94,17 @@ material = SubResource("StandardMaterial3D_6siol")
 [node name="Player" parent="." instance=ExtResource("2_rf2cd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08863807, 0)
 
+[node name="NPC" parent="." instance=ExtResource("4_5crlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.72794, -0.31863943, -36.778057)
+dialog_resource = SubResource("Resource_8xkvn")
+
+[node name="NPC2" parent="." instance=ExtResource("4_5crlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.15137, 0, -42.48984)
+npc_id = "npc_2"
+npc_name = "Hugh Mongous"
+dialog_resource = SubResource("Resource_rf2cd")
+
 [node name="QuestItem" parent="." instance=ExtResource("3_a814b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0189407, 0.4665053, 12.5298815)
 item_id = "  "
 item_icon = SubResource("ImageTexture3D_hbc2u")
-
-[node name="NPC" parent="." instance=ExtResource("4_5crlr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.72794, -0.31863943, -36.778057)
