@@ -1,0 +1,71 @@
+{
+	"npc_1": {
+		"trees": [
+			{
+				"branch_id": "npc_1_1",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "Hi, ya faggot! What'cha want?",
+						"options": {
+							"Ask who's the faggot": "in_progress",
+							"Receive Quests": "give_quests",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "in_progress",
+						"text": "Normally it is the one who asks! You interested?",
+						"options": {
+							"Go back": "start",
+							"Receive Quests": "give_quests",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "Go ask that guy over there, will ya.",
+						"options": {
+							"Go back": "start",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "end",
+						"text": "Good riddance, homo.",
+						"options": {}
+					},
+					{
+						"state": "exit",
+						"text": "Now, go get fucked sideways!",
+						"options": {}
+					}
+				]
+			},
+			{
+				"branch_id": "npc_1_2",
+				"dialogs": []
+			},
+			{
+				"branch_id": "npc_1_default",
+				"dialogs": []
+			},
+		],
+	},
+	"npc_2": {
+		"trees": [
+			{
+				"branch_id": "npc_2_1",
+				"dialogs": []
+			},
+			{
+				"branch_id": "npc_2_2",
+				"dialogs": []
+			},
+			{
+				"branch_id": "npc_2_default",
+				"dialogs": []
+			},
+		],
+	}
+}
