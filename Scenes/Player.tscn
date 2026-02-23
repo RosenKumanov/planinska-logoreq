@@ -1,35 +1,75 @@
-[gd_scene load_steps=5 format=3 uid="uid://c55q8jan67bu6"]
+[gd_scene format=3 uid="uid://c55q8jan67bu6"]
 
 [ext_resource type="Script" uid="uid://dkbh0temskmnq" path="res://CharacterMovement.gd" id="1_rpqav"]
+[ext_resource type="Script" uid="uid://b0814fudrhnqm" path="res://Scenes/health_bar.gd" id="2_dewec"]
 [ext_resource type="Texture2D" uid="uid://bmeo1bvfjqd1m" path="res://Textures/xp_icon.png" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://wk6pgjgkg44g" path="res://Scenes/hunger_bar.gd" id="3_5ixxa"]
+[ext_resource type="Script" uid="uid://dd6g1qhc2gi4y" path="res://Scenes/stamina_bar.gd" id="3_nn08x"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ue55g"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_55ck6"]
 points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4760704, 0.49888408, 0.16971254, 0.5591441, 0.46417162, 0.23105091, -0.8035912, 0.32045516, 0.40741014, 0.651043, -0.24352328, -0.4827893, 0.59484255, 0.082213186, -0.3628679, -0.68231165, 0.2896967, 0.46904355, -0.65452886, -0.06627126, -0.12744367, 0.8427015, -0.33810276, -0.39343542, -0.6839421, -0.24471663, 0.43825462, 0.62330925, 0.20084947, 0.0841477, 0.977454, 0.11479468, -0.06820232, -0.9764576, -0.12927033, 0.20054972, -0.56312895, -0.4514544, -0.18552664, 0.59545326, -0.4534751, -0.27336287, 0.59226835, 0.40775412, -0.0069364863, -0.47682306, 0.49966025, 0.37582088, -0.5886136, 0.31695515, 0.111579016, 0.5630594, -0.48117727, -0.41725034, 0.5278656, -0.27049688, -0.48454633, -0.59697217, -0.06650971, -0.27974695, 0.90856135, 0.05333608, -0.25019687, -0.8807117, 0.20531891, 0.263647, -0.90277094, -0.1273943, 0.29336792, 0.8715263, -0.15719566, 0.3734115, -0.5263189, -0.32824618, 0.4996626, 0.47664148, -0.0068885577, 0.053105574, 0.8750009, 0.32470253, -0.15454252, -0.5908538, 0.4658794, -0.09727988, -0.7823577, -0.39818847, -0.3876489, -0.49817133, 0.31564978, -0.30067965, -0.58799505, -0.38890144)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=1026657784]
 script = ExtResource("1_rpqav")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1825961957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74761105, 0)
 mesh = SubResource("CapsuleMesh_ue55g")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=860055530]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74761105, 0)
 shape = SubResource("ConvexPolygonShape3D_55ck6")
 
-[node name="Head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="." unique_id=1050648264]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3291596, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=441921184]
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="Head/Camera3D" unique_id=1944003371]
+modulate = Color(0.8748999, 0, 0.11552777, 1)
+offset_left = 64.0
+offset_top = 576.0
+offset_right = 256.0
+offset_bottom = 603.0
+value = 100.0
+script = ExtResource("2_dewec")
+
+[node name="StaminaBar" type="ProgressBar" parent="Head/Camera3D" unique_id=70694775]
+offset_left = 384.0
+offset_top = 576.0
+offset_right = 768.0
+offset_bottom = 603.0
+value = 100.0
+script = ExtResource("3_nn08x")
+
+[node name="HungerBar" type="ProgressBar" parent="Head/Camera3D" unique_id=1918709338]
+modulate = Color(0.23098707, 0.6249702, 1.92523e-07, 1)
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.003
+offset_left = 60.544
+offset_top = 496.0
+offset_right = 252.544
+offset_bottom = 523.0
+value = 20.0
+script = ExtResource("3_5ixxa")
+
+[node name="SanityBar" type="ProgressBar" parent="Head/Camera3D" unique_id=1221502574]
+modulate = Color(0.054241963, 0.29207325, 1, 1)
+offset_left = 64.0
+offset_top = 536.0
+offset_right = 256.0
+offset_bottom = 563.0
+value = 100.0
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1777307930]
 collide_with_areas = true
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1229287357]
 
-[node name="XP" type="ColorRect" parent="HUD"]
+[node name="XP" type="ColorRect" parent="HUD" unique_id=44973977]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -40,7 +80,7 @@ offset_bottom = 116.0
 grow_horizontal = 0
 color = Color(0.17641935, 0.17641902, 0.1764192, 1)
 
-[node name="Icon" type="TextureRect" parent="HUD/XP"]
+[node name="Icon" type="TextureRect" parent="HUD/XP" unique_id=844658329]
 layout_mode = 0
 offset_top = 13.0
 offset_right = 81.0
@@ -48,7 +88,7 @@ offset_bottom = 91.0
 texture = ExtResource("2_kyqiw")
 expand_mode = 2
 
-[node name="Amount" type="Label" parent="HUD/XP"]
+[node name="Amount" type="Label" parent="HUD/XP" unique_id=356528625]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -63,14 +103,14 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "0"
 
-[node name="QuestTracker" type="ColorRect" parent="HUD"]
+[node name="QuestTracker" type="ColorRect" parent="HUD" unique_id=1100422735]
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 316.0
 offset_bottom = 216.0
 color = Color(0.17641935, 0.17641902, 0.1764192, 1)
 
-[node name="Details" type="VBoxContainer" parent="HUD/QuestTracker"]
+[node name="Details" type="VBoxContainer" parent="HUD/QuestTracker" unique_id=196223597]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,7 +121,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Title" type="Label" parent="HUD/QuestTracker/Details"]
+[node name="Title" type="Label" parent="HUD/QuestTracker/Details" unique_id=1680196461]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.565719, 0.9963917, 0.7123623, 1)
 theme_override_font_sizes/font_size = 25
@@ -90,6 +130,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Objectives" type="VBoxContainer" parent="HUD/QuestTracker/Details"]
+[node name="Objectives" type="VBoxContainer" parent="HUD/QuestTracker/Details" unique_id=1574523407]
 layout_mode = 2
 size_flags_vertical = 3
